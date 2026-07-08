@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import { UseState } from "./UseState";
 import Welcome from "./Welcome";
 import Welcome_Props from "./Welcome_Props";
 
@@ -30,6 +31,9 @@ function App() {
 
       {/* Rebuild Using type */}
       <Welcome_Props username="Asma" isPremium={true}/>
+
+      {/* Exercise 8 */}
+      <UseState/>
     </>
   );
 }
