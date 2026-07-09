@@ -1,9 +1,29 @@
+import Age_Form from "./Age_Form";
+import Contact_Form from "./Contact_Form";
+import Email_Form from "./Email_Form";
 import ProductCard from "./ProductCard";
 import { UseState } from "./UseState";
 import Welcome from "./Welcome";
 import Welcome_Props from "./Welcome_Props";
 
 function App() {
+  const handleEmailSubmit = (email: string) => {
+    console.log(email);
+  };
+
+
+  const handleAgeSubmit = (age: number) => {
+    console.log(age);
+  };
+
+
+  const handleContactSubmit = (data: {
+    name: string;
+    email: string;
+  }) => {
+    console.log(data);
+  };
+
   return (
     <>
       <Welcome username="Omar Tood" isPremium={true} />
@@ -23,17 +43,18 @@ function App() {
         description="A smartphone is a portable electronic device that combines"
       />
 
-      <ProductCard
-        name="Mouse"
-        price={500}
-       
-      />
+      <ProductCard name="Mouse" price={500} />
 
       {/* Rebuild Using type */}
-      <Welcome_Props username="Asma" isPremium={true}/>
+      <Welcome_Props username="Asma" isPremium={true} />
 
       {/* Exercise 8 */}
-      <UseState/>
+      <UseState />
+
+      {/* Exercise 9 */}
+      <Email_Form onSubmit={handleEmailSubmit} />
+      <Age_Form onSubmit={handleAgeSubmit} />
+      <Contact_Form onSubmit={handleContactSubmit} />
     </>
   );
 }
